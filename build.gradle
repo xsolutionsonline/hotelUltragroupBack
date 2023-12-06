@@ -1,21 +1,12 @@
 plugins {
+	id 'org.springframework.boot' version '2.2.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
-	id 'org.springframework.boot' version '3.2.0'
-	id 'io.spring.dependency-management' version '1.1.4'
 }
 
 group = 'com.ultragroup'
 version = '0.0.1-SNAPSHOT'
-
-java {
-	sourceCompatibility = '17'
-}
-
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
-}
+sourceCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
@@ -36,6 +27,6 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-web'
 }
 
-tasks.named('test') {
+test {
 	useJUnitPlatform()
 }
